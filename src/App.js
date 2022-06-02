@@ -37,24 +37,24 @@ function App() {
           <div className="temp">
             {data.main ? <h1>{data.main.temp.toFixed()} °C</h1> : null}
           </div>
-          <div className="inline-block relative float-right -rotate-90">
+          <div className="inline-block relative float-right md:-rotate-90">
             {data.weather ? (
-              <p className="pl-36">{data.weather[0].main}</p>
+              <p className="sticky top-0 pl-36">{data.weather[0].main}</p>
             ) : null}
           </div>
         </div>
 
         {data.name !== undefined && (
-          <div className="w-full flex justify-evenly items-center p-4 border-2 border-none rounded-lg bg-gradient-to-r from-gray-900 to-transparent hover:bg-transparent">
-            <div className="feels">
+          <div className="w-full flex flex-col sm:flex-row justify-evenly items-center p-4 border-2 border-none rounded-lg bg-gradient-to-r from-gray-900 to-transparent hover:bg-transparent">
+            <div className="text-center">
               {data.main ? <p>{data.main.feels_like} °C</p> : null}
               <p>Feels Like</p>
             </div>
-            <div className="humidity">
+            <div className="text-center">
               {data.main ? <p>{data.main.humidity.toFixed()} %</p> : null}
               <p>Humidity</p>
             </div>
-            <div className="wind">
+            <div className="text-center">
               {data.wind ? <p>{data.wind.speed.toFixed()} MPH</p> : null}
               <p>Wind Speed</p>
             </div>
